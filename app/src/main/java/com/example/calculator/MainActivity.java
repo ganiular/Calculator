@@ -13,7 +13,6 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity {
     TextView expView, resultView;
-    MaterialButton btn0, btn1, btn2, btn3, btn4, btn5, btn6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         expView = findViewById(R.id.expression);
         resultView = findViewById(R.id.result);
-        btn0 = findViewById(R.id.button_0);
-        btn0.setOnClickListener(view -> addViewTextToScreen(view));
+        findViewById(R.id.button_0).setOnClickListener(view -> addViewTextToScreen(view));
         findViewById(R.id.button_1).setOnClickListener(view -> addViewTextToScreen(view));
         findViewById(R.id.button_2).setOnClickListener(view -> addViewTextToScreen(view));
         findViewById(R.id.button_3).setOnClickListener(view -> addViewTextToScreen(view));
