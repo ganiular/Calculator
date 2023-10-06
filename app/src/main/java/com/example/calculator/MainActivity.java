@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 public class MainActivity extends AppCompatActivity {
     TextView expView, resultView;
     MaterialButton btn0, btn1, btn2, btn3, btn4, btn5, btn6;
@@ -55,9 +58,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void evaluate() {
         String expressionText = expView.getText().toString();
-        String resultText = "";
-
-        resultView.setText(resultText);
+        try {
+            Expression expression = new ExpressionBuilder(expressionText).build();
+            double result = expression.evaluate();
+            String resultText = String.valueOf(result);
+            if(resultText.endsWith(".0")){
+                resultText = resultText.substring(0, resultText.length() - 2);
+            }
+            resultView.setText(resultText);
+        }catch (Exception e){
+            resultView.setText("Error");
+        }
     }
 
     private void addViewTextToScreen(View view){

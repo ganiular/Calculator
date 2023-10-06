@@ -26,3 +26,5 @@ gradlew
 app/src/androidTest/java/com/example/calculator/ExampleInstrumentedTest.java
 app/src/test/java/com/example/calculator/ExampleUnitTest.java
 app/proguard-rules.pro
+.idea/.gitignore
+.idea/vcs.xml
